@@ -63,8 +63,10 @@
                         <table class="table" id="trainTable">
                             <thead>
                             <tr>
-                                <th><h4>My Hours</h4></th>
-                                <th><h4>Total Hours Volunteered</h4></th>
+                                <th><h4>Name</h4></th>
+                                <th><h4>Contact Number</h4></th>
+                                <th><h4>Hours Volunteered</h4></th>
+                                <th><h4>Volunteer Since</h4></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -95,13 +97,14 @@
                                 <button type="button" id="submit" class="btn btn-primary btn-lg">Submit</button>
 
                                 <button type="button" id="logout" class="btn btn-primary btn-lg">logout</button>
+                                
+                                <!-- Button to check if user logged into FaceBook -->
+                                <!-- <button type="button" id="face" class="btn btn-primary btn-lg">face</button> -->
 
-                                <button type="button" id="face" class="btn btn-primary btn-lg">face</button>
-
-                                <button type="button" id="share" class="btn btn-primary btn-lg">Post My Hours to Facebook</button>
+                                <button type="button" id="post" class="btn btn-primary btn-lg">Post  Hours to Facebook</button>
 
                                 <div class="fb-share-button" 
-                                    data-href="https://fast-beyond-63454.herokuapp.com/" 
+                                    data-size="large" data-href="https://fast-beyond-63454.herokuapp.com/" 
                                     data-layout="button_count">
                                 </div>
 
@@ -111,6 +114,9 @@
             </div>
     </div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="/javascript/index.js"></script>
 
