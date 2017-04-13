@@ -146,7 +146,8 @@ app.post('/index', function(req, res) {
           var fanout = {};
           fanout['/Volunteers/'+x+'/totalHours/'] = newTotal;
           fanout['/Volunteers/'+x+'/log/'+inputDate+'/'] = parseInt(inputHours);
-          fanout['/Volunteers/lastUpdate'] = inputDate;
+          fanout['/Volunteers/'+x+'/lastUpdateDate/'] = inputDate;
+          fanout['/Volunteers/'+x+'/lastUpdateHours/'] = parseInt(inputHours);
           database.ref().update(fanout);
         }
       }
