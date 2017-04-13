@@ -101,6 +101,23 @@ database.ref('/smsAction/').on('value', function(snapshot) {
     }    
 });
 
+// get today as 'mm-dd-yyy'
+function getToday() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10) {
+        dd='0'+dd
+    } 
+    if(mm<10) {
+        mm='0'+mm
+    } 
+    today = mm+'-'+dd+'-'+yyyy;
+    return today;
+}
+
+
 //------------------------ END SMS ---------------------------
 
     
@@ -115,7 +132,26 @@ app.get('/', function(req, res) {
 
 app.post('/index', function(req, res) {   
 	console.log("received");
-    database.ref("/incoming/").update("success");
+	var inputHours=req.body.text;
+	var srcPhone=req.body.from;
+	srcPhone = srcPhone.substring(2);
+  var inputDate = getToday();
+  database.ref().once('value') 
+    .then(function(snapshot) {
+      var dbImage = snapshot.val();
+      var vols = dbImage.Volunteers;
+      for (x in vols) {
+        if (vols[x].phone === srcPhone) {
+          var newTotal = parseInt(vols[x].totalHours) + parseInt(inputHours);
+          var fanout = {};
+          fanout['/Volunteers/'+x+'/totalHours/'] = newTotal;
+          fanout['/Volunteers/'+x+'/log/'+inputDate+'/'] = parseInt(inputHours);
+          fanout['/Volunteers/lastUpdate'] = inputDate;
+          database.ref().update(fanout);
+        }
+      }
+  });
+    
 });
 
 app.get('/login', function(req, res) {

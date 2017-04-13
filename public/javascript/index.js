@@ -22,7 +22,7 @@ document.getElementById("post").onclick = function(event){
 
 //  Posts to facebook
 function post() {
-  FB.login(function(){FB.api('/me/feed', 'post', {message: "I Volunteered "+ fbHours +" hours!" });}, {scope: 'publish_actions'});
+  FB.login(function(){FB.api('/me/feed', 'post', {message: "I Volunteered "+ fbHours +" hours at the Miracle Foundation!" });}, {scope: 'publish_actions'});
 }
 
 // Checks if facebook user is logged in 
