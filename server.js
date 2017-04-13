@@ -77,7 +77,7 @@ function sendSMS(toPhone,smsContent) {
 database.ref('/smsAction/').on('value', function(snapshot) { 
     var dbImage = snapshot.val();
     if (dbImage.sendSMS === true) {
-        console.log(dbImage);
+        // console.log(dbImage);
         database.ref().once('value') 
             .then(function(snapshot) {
                 // if the sendSMS flag in Firebase is true, send an SMS
@@ -94,7 +94,7 @@ database.ref('/smsAction/').on('value', function(snapshot) {
                         sendSMS(phone,theMessage);
                     }
                     else { 
-                        return false;
+                       
                     }
                 }
         });
