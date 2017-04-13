@@ -9,11 +9,12 @@
 //   face();
 //   }
 
+var fbHours;
 
 // On click posts to calls function to post to currently logged in Facebook user
 document.getElementById("post").onclick = function(event){
   event.preventDefault();
-  var fbHours = $("#myHours").val();
+  fbHours = $("#myHours").val();
   submitHours();
   post();
   }
@@ -21,7 +22,7 @@ document.getElementById("post").onclick = function(event){
 
 //  Posts to facebook
 function post() {
-  FB.login(function(){FB.api('/me/feed', 'post', {message: "I Volunteered a million hours!" });}, {scope: 'publish_actions'});
+  FB.login(function(){FB.api('/me/feed', 'post', {message: "I Volunteered "+ fbHours +" hours!" });}, {scope: 'publish_actions'});
 }
 
 // Checks if facebook user is logged in 
@@ -36,10 +37,6 @@ function post() {
 // });
 
 //   }
-
-
-
-
 
 document.getElementById("logout").onclick = function(event){
   event.preventDefault();
@@ -101,7 +98,7 @@ db.ref().once('value')
     console.log(phone);
     startDate = theDB.Volunteers[userKey].startDate;
     console.log(startDate);
-    hours = theDB.Volunteers[userKey].hours;
+    hours = theDB.Volunteers[userKey].totalHours;
     $("tbody").append("<tr><td>"+name+"</td><td>"+phone+"</td><td id='hours'>"+hours+"</td><td>"+startDate+"</td></tr>");
    
 })

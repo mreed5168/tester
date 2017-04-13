@@ -12,6 +12,11 @@ var admin = require("firebase-admin");
 
 var serviceAccount = require("./vtext.json");
 
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // **********************  SMS INIT *********************
 
 var Bandwidth = require("node-bandwidth");
