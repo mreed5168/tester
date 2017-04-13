@@ -140,9 +140,14 @@ app.post('/index', function(req, res) {
     .then(function(snapshot) {
       var dbImage = snapshot.val();
       var vols = dbImage.Volunteers;
+      var newTotal = 0;
       for (x in vols) {
         if (vols[x].phone === srcPhone) {
-          var newTotal = parseInt(vols[x].totalHours) + parseInt(inputHours);
+          if (vols[x].totalHours === undefined) {
+          	newTotal = parseInt(inputHours);
+          } else {
+          		newTotal = parseInt(vols[x].totalHours) + parseInt(inputHours);
+          	}
           var fanout = {};
           fanout['/Volunteers/'+x+'/totalHours/'] = newTotal;
           fanout['/Volunteers/'+x+'/log/'+inputDate+'/'] = parseInt(inputHours);
