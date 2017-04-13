@@ -108,7 +108,7 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/login.html');
 });
 
-app.post('/', function(req, res) {   
+app.post('/index', function(req, res) {   
 	console.log("received");
     database.ref("/incoming/").update("success");
 });
