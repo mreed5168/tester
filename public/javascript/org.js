@@ -45,7 +45,7 @@ database.ref().on('value',function(snapshot){
         email.append(vEmail);
         total.append(vTotal);
 
-        // $("tbody").append("<tr><td>"+name+"</td><td>"+email+"</td><td>"+total+"</td></tr>");
+        
     }
 });
 
