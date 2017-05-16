@@ -29,7 +29,9 @@
             <div class="jumbotron box">
                 <h1>Track Those Volunteers</h1>
                 <br>
-                
+               <!--  <form action="/" method="get"> -->
+                    <button type="button" action="/" method="get" id="home" class="btn btn-primary btn-lg">Login Page</button>
+                <!-- </form> -->
             </div>   
         </div>
         <br>
@@ -56,7 +58,8 @@
             <br>
             <br>
             <div class="row">
-                <div class="panel panel-primary">
+                <div class="col-xs-6">
+                    <div class="panel panel-primary">
                     <div class="panel-heading">Add Volunteer</div>
                         <div class="panel-body">
                             <div class="input-group">
@@ -86,22 +89,31 @@
                                 <input type="password" class="form-control" id="volunteerPassword" aria-describedby="basic-addon1">
                             </div>
                             
-                            <div class="input-group">
-                            <label for="smsContent">Message Content</label>
-                                <input type="text" class="form-control" id="smsContent" aria-describedby="basic-addon1">
-
-                                
-                            </div>
-                            
                             <div class="btn-group">
                                 <button type="button" id="submit" class="btn btn-primary btn-lg">Submit</button>
-
-                                <button type="button" id="sendSMS" class="btn btn-primary btn-lg">Send SMS</button>
   
                             </div>
                         </div>
-                    </div>           
-            </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div class="panel panel-primary">
+                    <div class="panel-heading">Request Hours From Volunteers</div>
+                        <div class="panel-body">
+                            <div class="input-group">
+                                <label for="smsContent">Message Content</label>
+                                    <input type="text" class="form-control" id="smsContent" aria-describedby="basic-addon1">
+                            </div>
+                            <br>
+
+                            <div clas="btn-group">
+                                <button type="button" id="sendSMS" class="btn btn-primary btn-lg">Send SMS With Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>         
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>

@@ -11,10 +11,6 @@ document.getElementById("signIn").onclick = function(event){
   console.log("Clicking Works");
   }
 
-// document.getElementById("logout").onclick = function(event){
-//   event.preventDefault();
-//   logout();
-//   }
 
 function logout () {
   firebase.auth().signOut().then(function() {

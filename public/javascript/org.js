@@ -102,9 +102,13 @@ function logout () {
   });
 }
 
+// Clear divs after creating User 
 function clear () {
-    document.getElementById("volunteerPassword").value = "";
+    document.getElementById("volunteerName").value = "";
     document.getElementById("volunteerEmail").value = "";
+    document.getElementById("volunteerPhone").value = "";
+    document.getElementById("volunteerPassword").value = "";
+
 }
 
 // Adds a single new volunteer to the database from DOM input

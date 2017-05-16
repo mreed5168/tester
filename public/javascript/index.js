@@ -3,11 +3,7 @@
         AUTHENTICATION (Logout/Redirect)
 
 *************************************************/
-// Used to call fucntion to check if Facebook user is logged in 
-// document.getElementById("face").onclick = function(event){
-//   event.preventDefault();
-//   face();
-//   }
+
 
 var fbHours;
 
@@ -25,27 +21,13 @@ function post() {
   FB.login(function(){FB.api('/me/feed', 'post', {message: "I Volunteered "+ fbHours +" hours at the Miracle Foundation!" });}, {scope: 'publish_actions'});
 }
 
-// Checks if facebook user is logged in 
-//   function face () {
-//     FB.getLoginStatus(function(response) {
-//   if (response.status === 'connected') {
-//     console.log('Logged in.');
-//   }
-//   else {
-//     FB.login();
-//   }
-// });
-
-//   }
 
 document.getElementById("logout").onclick = function(event){
   event.preventDefault();
   logout();
   }
 
-// var user = firebase.auth().currentUser;
-// console.log(user);
-
+    
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) { 
   } else if (!user) {
