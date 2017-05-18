@@ -115,6 +115,13 @@ db.ref().on('value',function(snapshot){
 // Click function to add the hours collected to totalHours in Firebase
 $("#submit").on('click', function(){
   submitHours();
+  document.getElementById("myHours").value = "";
+  document.getElementById("month").value = "";
+  document.getElementById("day").value = "";
+  document.getElementById("year").value = "";
+  document.getElementById("month").value = "";
+  document.getElementById("day").value = "";
+  document.getElementById("year").value = "";
 
 });
 
@@ -155,6 +162,7 @@ function submitHours(){
         (validateDate(formSelector,endM)) && (validateDate(formSelector,endD)) && (validateYear(formSelector,endY)))  {
             
             recordVolHours(volHours);
+            
 
     }
 }

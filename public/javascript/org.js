@@ -62,6 +62,12 @@ document.getElementById("submit").onclick = function(event){
         console.log("click works");
     }
 
+document.getElementById("home").onclick = function(event){
+        event.preventDefault();
+        window.location = "/";
+
+    }
+
 // send a reminder SMS to all volunteers
 document.getElementById("sendSMS").onclick = function(event){
     // event.preventDefault();
@@ -72,6 +78,8 @@ document.getElementById("sendSMS").onclick = function(event){
     fanout['/smsAction/smsContent/'] = content;
     fanout['/smsAction/sendSMS/'] = true;
     database.ref().update(fanout);
+    document.getElementById("smsContent").value = "";
+
 }
 
 // create user for auth in Firebase
