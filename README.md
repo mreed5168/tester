@@ -16,7 +16,7 @@
 
 ##### Design:
 
-- The app will include two interfaces:
+- The app will include two interfaces: 
 
     1. **The non-profit facing app** that allows input of known volunteers and their phone numbers, handle opt-in for sms messaging, and access the collected data.
 
