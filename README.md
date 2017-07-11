@@ -11,7 +11,7 @@
 
 ##### The Solution:
 
-- Our app will enable simple automated data collection by sending volunteers sms messages on a weekly or monthly basis requesting the volunteer to respond with their volunteer hours.
+- This app will enable simple automated data collection by sending volunteers sms messages on a weekly or monthly basis requesting the volunteer to respond with their volunteer hours.
 
 - After responding with their hours, volunteers will have the option to post their hours on Facebook which will increase awareness for the non-profit.
 
@@ -27,15 +27,13 @@
 
 ##### APIs:
 
-- Plivo
 - Facebook
 
 #### Technologies:
 
-- Node.js for receiving messages
+- Node.js 
 - Heroku for hosting Node server
 - Firebase for data collection
-- Plivo helper library
 - Ajax
 
 ----
