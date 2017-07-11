@@ -4,8 +4,6 @@ var express = require('express');
 
 var app = express();
 
-// var firebase = require('firebase');
-
 var http = require('http');
 
 var admin = require("firebase-admin");
@@ -16,6 +14,12 @@ var bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
+
+
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
 
 // **********************  SMS INIT *********************
 
@@ -37,11 +41,10 @@ admin.initializeApp({
 
 // authenticate with admin privileges
 var database = admin.database();
-// var ref = database.ref("restricted_access/secret_document");
+
 
 //-------------------------------------------------------------
 
-app.use(express.static('public'));
 
 
 
@@ -121,10 +124,8 @@ function getToday() {
 //------------------------ END SMS ---------------------------
 
     
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
 
+//----------------------- Routes -----------------------------
 
 app.get('/', function(req, res) {   
     res.sendFile(__dirname + '/views/login.html');
