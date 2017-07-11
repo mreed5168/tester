@@ -1,5 +1,5 @@
 {
-  "name": "volunteerhours",
+  "name": "VolunText",
   "version": "1.0.0",
   "description": "> Request and retain vounteer hours while allowing volunteers to humblebrag their service over Facebook.",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/russotx/VolunteerHours.git"
+    "url": "git+https://github.com/mreed5168/VolunText.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/russotx/VolunteerHours/issues"
+    "url": "https://github.com/mreed5168/VolunText/issues"
   },
-  "homepage": "https://github.com/russotx/VolunteerHours#readme",
+  "homepage": "https://github.com/mreed5168/VolunText#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
